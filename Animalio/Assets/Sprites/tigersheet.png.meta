@@ -1,0 +1,152 @@
+fileFormatVersion: 2
+guid: e7f53fabb4052704991e8d3b5b87688d
+timeCreated: 1466483206
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: tigersheet_0
+    21300002: tigersheet_1
+    21300004: tigersheet_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: tigersheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 311
+        width: 270
+        height: 283
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 135, y: 107.5}
+        - {x: 115, y: 111.5}
+        - {x: 66, y: 64.5}
+        - {x: 45, y: -10.5}
+        - {x: 37, y: 41.5}
+        - {x: 53, y: 111.5}
+        - {x: 32, y: 139.5}
+        - {x: -115, y: 139.5}
+        - {x: -135, y: 116.5}
+        - {x: -135, y: 72.5}
+        - {x: -117, y: 20.5}
+        - {x: -135, y: -11.5}
+        - {x: -135, y: -108.5}
+        - {x: -89, y: -141.5}
+        - {x: 11, y: -141.5}
+        - {x: 58, y: -104.5}
+        - {x: 74, y: -55.5}
+        - {x: 135, y: 79.5}
+    - name: tigersheet_1
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 311
+        width: 270
+        height: 283
+      alignment: 9
+      pivot: {x: 0.48162085, y: 0.47369763}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 139.96237, y: 94.94357}
+        - {x: 130.96237, y: 100.94357}
+        - {x: 100.96237, y: 100.94357}
+        - {x: 60.96237, y: 37.943573}
+        - {x: 52.96237, y: -4.056427}
+        - {x: 56.96237, y: 124.94357}
+        - {x: 40.96237, y: 148.94357}
+        - {x: -91.03763, y: 148.94357}
+        - {x: -122.03763, y: 134.94357}
+        - {x: -130.03763, y: 125.94357}
+        - {x: -130.03763, y: 71.94357}
+        - {x: -118.03763, y: 33.943573}
+        - {x: -130.03763, y: -23.056427}
+        - {x: -130.03763, y: -73.05643}
+        - {x: -113.03763, y: -104.05643}
+        - {x: -74.03763, y: -134.05643}
+        - {x: 7.962372, y: -134.05643}
+        - {x: 40.96237, y: -126.05643}
+        - {x: 77.96237, y: -53.056427}
+        - {x: 139.96237, y: 62.943573}
+    - name: tigersheet_2
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 270
+        height: 283
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 117, y: 100.5}
+        - {x: 117, y: 125.5}
+        - {x: 112, y: 138.5}
+        - {x: 111, y: 138.5}
+        - {x: 68, y: 108.5}
+        - {x: 54, y: 69.5}
+        - {x: 51, y: 104.5}
+        - {x: 29, y: 138.5}
+        - {x: -16, y: 138.5}
+        - {x: -35, y: 113.5}
+        - {x: -67, y: 138.5}
+        - {x: -106, y: 138.5}
+        - {x: -133, y: 128.5}
+        - {x: -135, y: 123.5}
+        - {x: -135, y: -89.5}
+        - {x: -119, y: -113.5}
+        - {x: -85, y: -141.5}
+        - {x: 3, y: -141.5}
+        - {x: 24, y: -134.5}
+        - {x: 63, y: -62.5}
+        - {x: 82, y: 66.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

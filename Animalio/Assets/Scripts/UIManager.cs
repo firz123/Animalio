@@ -38,9 +38,13 @@ public class UIManager : MonoBehaviour {
         sliderFillHolder = GameObject.Find("myFill");
         textObject = GameObject.Find("dialogueText");
 
-        slider = mySliderObject.GetComponent<Slider>();
-        sliderFill = sliderFillHolder.GetComponent<Image>();
-        text = textObject.GetComponent<Text>(); 
+        if (GameObject.Find("Panel").activeInHierarchy == true)
+        {
+            slider = mySliderObject.GetComponent<Slider>();
+            sliderFill = sliderFillHolder.GetComponent<Image>();
+            text = textObject.GetComponent<Text>();
+
+        }
 
         myMenu = new GameObject[] { playbtn, talkbtn, feedbtn, mySliderObject };
 

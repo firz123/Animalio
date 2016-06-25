@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -154,9 +155,35 @@ public class UIManager : MonoBehaviour {
         text.text = StringBank.TIGER_01; 
 
     }
+
     void playAnimal()
     {
-        Debug.Log("play with animal"); 
+        deactivateObjects();
+        loadFoodWebGame();
+    }
 
+    void loadFoodWebGame()
+    {
+
+    }
+
+    void deactivateObjects()
+    {
+        for(int i = 0; i < myMenu.Length; i++)
+        {
+            myMenu[i].SetActive(false);
+        }
+        activeObject.SetActive(false);
+        textObject.SetActive(false);
+    }
+
+    void activateObjects()
+    {
+        for (int i = 0; i < myMenu.Length; i++)
+        {
+            myMenu[i].SetActive(true);
+        }
+        activeObject.SetActive(true);
+        textObject.SetActive(true);
     }
 }

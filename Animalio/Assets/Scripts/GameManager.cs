@@ -3,6 +3,7 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
+    private int animalFood;
 	// Use this for initialization
 	void Start () {
 	
@@ -12,4 +13,14 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void changetoActivityScene(int food)
+    {
+        animalFood = food;
+    }
+
+    void returnToMain()
+    {
+        
+    }
 }

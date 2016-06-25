@@ -185,7 +185,7 @@ public class UIManager : MonoBehaviour {
         textObject.SetActive(false);
     }
 
-    void activateObjects()
+    public void activateObjects()
     {
         for (int i = 0; i < myMenu.Length; i++)
         {

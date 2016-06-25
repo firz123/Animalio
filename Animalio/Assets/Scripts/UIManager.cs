@@ -9,11 +9,15 @@ public class UIManager : MonoBehaviour {
     GameObject feedbtn;
     GameObject mySliderObject;
     GameObject sliderFillHolder;
-    GameObject textObject; 
+    GameObject textObject;
+    public GameObject bg;
+    public Canvas canvas;
 
     GameObject[] myMenu;
 
     public LayerMask animals;
+
+    GameObject foodChainGame;
 
     Text text; 
     Image sliderFill;
@@ -168,9 +172,9 @@ public class UIManager : MonoBehaviour {
 
     void loadFoodWebGame()
     {
-
+        foodChainGame = Instantiate(bg, bg.transform.position, bg.transform.rotation) as GameObject; 
+        foodChainGame.transform.SetParent(canvas.transform, false);
     }
-
     void deactivateObjects()
     {
         for(int i = 0; i < myMenu.Length; i++)

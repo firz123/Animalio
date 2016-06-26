@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour {
     GameObject sliderFillHolder;
     GameObject textObject;
     GameObject startmenu;
+    GameObject instructions;
+    GameObject instructokbtn;
     public GameObject bg;
     public Canvas canvas;
 
@@ -45,6 +47,12 @@ public class UIManager : MonoBehaviour {
         mySliderObject = GameObject.Find("Slider");
         sliderFillHolder = GameObject.Find("myFill");
         textObject = GameObject.Find("dialogueText");
+
+        instructions = GameObject.Find("InstructImg");
+        instructokbtn = GameObject.Find("OkBtn");
+
+        instructokbtn.SetActive(false);
+        instructions.SetActive(false);
 
         if (GameObject.Find("Panel").activeInHierarchy == true)
         {
@@ -195,7 +203,8 @@ public class UIManager : MonoBehaviour {
     }
     void deactivateObjects()
     {
-        for(int i = 0; i < myMenu.Length; i++)
+        GameObject.Find("Panel").SetActive(false);
+        for (int i = 0; i < myMenu.Length; i++)
         {
             myMenu[i].SetActive(false);
         }
@@ -210,6 +219,21 @@ public class UIManager : MonoBehaviour {
             myMenu[i].SetActive(true);
         }
         activeObject.SetActive(true);
-        textObject.SetActive(true);
+    }
+
+    public void showInstructions()
+    {
+        startmenu.SetActive(false);
+        activeObject.SetActive(false);
+        instructokbtn.SetActive(true);
+        instructions.SetActive(true);
+    }
+
+    public void closeInstructions()
+    {
+        startmenu.SetActive(true);
+        activeObject.SetActive(true);
+        instructokbtn.SetActive(false);
+        instructions.SetActive(false);
     }
 }

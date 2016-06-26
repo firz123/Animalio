@@ -7,9 +7,11 @@ public class UIManager : MonoBehaviour {
     GameObject playbtn;
     GameObject talkbtn;
     GameObject feedbtn;
+    GameObject continuebtn;
     GameObject mySliderObject;
     GameObject sliderFillHolder;
     GameObject textObject;
+    GameObject startmenu;
     public GameObject bg;
     public Canvas canvas;
 
@@ -35,9 +37,11 @@ public class UIManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        startmenu = GameObject.Find("StartMenu");
         playbtn = GameObject.Find("PlayBtn");
         talkbtn = GameObject.Find("TalkBtn");
         feedbtn = GameObject.Find("FeedBtn");
+        continuebtn = GameObject.Find("ContinueBtn");
         mySliderObject = GameObject.Find("Slider");
         sliderFillHolder = GameObject.Find("myFill");
         textObject = GameObject.Find("dialogueText");
@@ -47,7 +51,6 @@ public class UIManager : MonoBehaviour {
             slider = mySliderObject.GetComponent<Slider>();
             sliderFill = sliderFillHolder.GetComponent<Image>();
             text = textObject.GetComponent<Text>();
-
         }
 
         myMenu = new GameObject[] { playbtn, talkbtn, feedbtn, mySliderObject };
@@ -57,13 +60,21 @@ public class UIManager : MonoBehaviour {
             myMenu[i].SetActive(false); 
         }
 
-        textObject.SetActive(false); 
+        textObject.SetActive(false);
+        continuebtn.SetActive(false);
 
-        sliderFill.color = green; 
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        sliderFill.color = green;
+        deactivateObjects();
+    }
+
+    public void startPlay()
+    {
+        startmenu.SetActive(false);
+        activeObject.SetActive(true);
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             if (onAnimal())
@@ -158,10 +169,17 @@ public class UIManager : MonoBehaviour {
     void talkAnimal()
     {
         menuMaker(isMenuOpen); 
-        textObject.SetActive(true); 
+        textObject.SetActive(true);
+        continuebtn.SetActive(true); 
         text.supportRichText = true; 
         text.text = StringBank.TIGER_01; 
+    }
 
+    public void endTalk()
+    {
+        menuMaker(isMenuOpen);
+        textObject.SetActive(false);
+        continuebtn.SetActive(false);
     }
 
     void playAnimal()

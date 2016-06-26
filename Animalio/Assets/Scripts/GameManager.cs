@@ -2,25 +2,20 @@
 using System.Collections;
 
 public class GameManager : MonoBehaviour {
+    public GameObject[] animals;
+    public AudioClip clip; 
+    public AudioSource soundSource; 
 
-    private int animalFood;
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-    void changetoActivityScene(int food)
+    public void makeAnimals()
     {
-        animalFood = food;
+        foreach (GameObject ele in animals)
+        {
+            Instantiate(ele); 
+        }
     }
-
-    void returnToMain()
+    public void PlaySingle()
     {
-        
+        soundSource.clip = clip;
+        soundSource.Play();
     }
 }

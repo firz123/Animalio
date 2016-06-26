@@ -57,7 +57,7 @@ public class WinCheck : MonoBehaviour {
         GameObject ui = GameObject.Find("UIManager");
         UIManager other = (UIManager)ui.GetComponent(typeof(UIManager));
         other.activateObjects();
-        GameObject bg = GameObject.Find("Background(Clone)");
+        GameObject bg = GameObject.Find("Background 1 1 1(Clone)");
         Destroy( bg );
     }
 

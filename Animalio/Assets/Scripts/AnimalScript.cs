@@ -40,10 +40,14 @@ public class AnimalScript : MonoBehaviour {
 
             randTime -= Time.deltaTime;
 
-            if (randTime < 0)
+            if (this.tag == "Tiger")
             {
-                animator.SetTrigger("RandomMov");
-                randTime = Random.Range(1, 10);
+                if (randTime < 0)
+                {
+                    animator.SetTrigger("RandomMov");
+                    randTime = Random.Range(1, 10);
+                }
+
             }
 
             foodDecTime -= Time.deltaTime;

@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour {
     public Canvas canvas;
 
     GameObject[] myMenu;
+    GameManager gameMgr; 
 
     public LayerMask animals;
 
@@ -47,6 +48,7 @@ public class UIManager : MonoBehaviour {
         mySliderObject = GameObject.Find("Slider");
         sliderFillHolder = GameObject.Find("myFill");
         textObject = GameObject.Find("dialogueText");
+        gameMgr = GameObject.Find("GameManager").GetComponent<GameManager>(); 
 
         instructions = GameObject.Find("InstructImg");
         instructokbtn = GameObject.Find("OkBtn");
@@ -78,7 +80,8 @@ public class UIManager : MonoBehaviour {
     public void startPlay()
     {
         startmenu.SetActive(false);
-        activeObject.SetActive(true);
+        gameMgr.makeAnimals();
+        gameMgr.PlaySingle(); 
     }
 
     // Update is called once per frame
@@ -148,7 +151,7 @@ public class UIManager : MonoBehaviour {
             talkAnimal();
             break;
         }
-    
+        gameMgr.PlaySingle(); 
     }
 
 
@@ -160,7 +163,7 @@ public class UIManager : MonoBehaviour {
         {
             activeObject = hit.collider.gameObject;
             activeAnimal = activeObject.GetComponent<AnimalScript>();
-
+            gameMgr.PlaySingle();
             return true;
         }
         else
@@ -180,7 +183,16 @@ public class UIManager : MonoBehaviour {
         textObject.SetActive(true);
         continuebtn.SetActive(true); 
         text.supportRichText = true; 
-        text.text = StringBank.TIGER_01; 
+
+        switch (activeObject.tag)
+        {
+            case "Tiger":
+            text.text = StringBank.TIGER_01;
+            break;
+            case "Frog":
+            text.text = StringBank.FROG_01;
+            break;
+        }
     }
 
     public void endTalk()
@@ -203,12 +215,14 @@ public class UIManager : MonoBehaviour {
     }
     void deactivateObjects()
     {
-        GameObject.Find("Panel").SetActive(false);
         for (int i = 0; i < myMenu.Length; i++)
         {
             myMenu[i].SetActive(false);
         }
-        activeObject.SetActive(false);
+        if (activeObject != null)
+        {
+            activeObject.SetActive(false);
+        }
         textObject.SetActive(false);
     }
 
@@ -224,16 +238,18 @@ public class UIManager : MonoBehaviour {
     public void showInstructions()
     {
         startmenu.SetActive(false);
-        activeObject.SetActive(false);
+        //activeObject.SetActive(false);
         instructokbtn.SetActive(true);
         instructions.SetActive(true);
+        gameMgr.PlaySingle(); 
     }
 
     public void closeInstructions()
     {
         startmenu.SetActive(true);
-        activeObject.SetActive(true);
+        //activeObject.SetActive(true);
         instructokbtn.SetActive(false);
         instructions.SetActive(false);
+        gameMgr.PlaySingle(); 
     }
 }

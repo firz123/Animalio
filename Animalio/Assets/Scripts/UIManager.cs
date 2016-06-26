@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour {
     GameObject startmenu;
     GameObject instructions;
     GameObject instructokbtn;
+    GameObject frogPort;
+    GameObject tigerPort; 
     public GameObject bg;
     public Canvas canvas;
 
@@ -32,7 +34,7 @@ public class UIManager : MonoBehaviour {
     public Color orange;
     public Color red;
 
-    public StringBank stringbank; 
+    public StringBank stringbank;
     private AnimalScript activeAnimal;
     private GameObject activeObject;
 
@@ -48,6 +50,8 @@ public class UIManager : MonoBehaviour {
         mySliderObject = GameObject.Find("Slider");
         sliderFillHolder = GameObject.Find("myFill");
         textObject = GameObject.Find("dialogueText");
+        frogPort = GameObject.Find("frogPortrait");
+        tigerPort = GameObject.Find("tigerPortrait");
         gameMgr = GameObject.Find("GameManager").GetComponent<GameManager>(); 
 
         instructions = GameObject.Find("InstructImg");
@@ -70,6 +74,8 @@ public class UIManager : MonoBehaviour {
             myMenu[i].SetActive(false); 
         }
 
+        tigerPort.SetActive(false);
+        frogPort.SetActive(false); 
         textObject.SetActive(false);
         continuebtn.SetActive(false);
 
@@ -124,9 +130,27 @@ public class UIManager : MonoBehaviour {
             }
 
             isMenuOpen = true;
+            switch (activeObject.tag)
+            {
+                case "Tiger":
+                    tigerPort.SetActive(true);
+                    break;
+                case "Frog":
+                    frogPort.SetActive(true);
+                    break;
+            }
         }
         else
         {
+            switch (activeObject.tag)
+            {
+                case "Tiger":
+                    tigerPort.SetActive(false);
+                    break;
+                case "Frog":
+                    frogPort.SetActive(false);
+                    break;
+            }
             for (int i = 0; i < myMenu.Length; i++)
             {
                 myMenu[i].SetActive(false);
@@ -187,10 +211,10 @@ public class UIManager : MonoBehaviour {
         switch (activeObject.tag)
         {
             case "Tiger":
-            text.text = StringBank.TIGER_01;
+                text.text = StringBank.chooseString("Tiger"); 
             break;
             case "Frog":
-            text.text = StringBank.FROG_01;
+            text.text = StringBank.chooseString("Frog"); 
             break;
         }
     }
@@ -222,7 +246,17 @@ public class UIManager : MonoBehaviour {
         if (activeObject != null)
         {
             activeObject.SetActive(false);
+            switch (activeObject.tag)
+            {
+                case "Tiger":
+                    tigerPort.SetActive(false);
+                    break;
+                case "Frog":
+                    frogPort.SetActive(false);
+                    break;
+            }
         }
+
         textObject.SetActive(false);
     }
 

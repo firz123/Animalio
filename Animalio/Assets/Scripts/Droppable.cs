@@ -26,7 +26,6 @@ public class Droppable : MonoBehaviour, IDropHandler
         if (!item)
         {
             Draggable.itemBeingDragged.transform.SetParent(transform);
-            Debug.Log("dropped");
         }
 
     }
